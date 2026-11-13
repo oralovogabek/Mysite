@@ -1,0 +1,3 @@
+-- Optional: sample seed import is easiest through Admin panel.
+-- Demo mode already includes 26 starter projects in js/seed-data.js.
+-- For production, use the Admin panel to add records after connecting Supabase.

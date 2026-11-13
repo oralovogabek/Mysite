@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d0b">
+  <meta name="description" content="Ogabek — developer portfolio. Web loyihalar, Telegram botlar va dasturlash tajribasi.">
+  <title>Ogabek — Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Ogabek bosh sahifa">OG<span>.</span>DEV</a>
+    <button class="menu-toggle icon-btn" id="menuToggle" aria-label="Menyuni ochish"><i data-lucide="menu"></i></button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#home" data-i18n="nav_home">Bosh sahifa</a>
+      <a href="#about" data-i18n="nav_about">Men haqimda</a>
+      <a href="#projects" data-i18n="nav_projects">Loyihalar</a>
+      <a href="#bots" data-i18n="nav_bots">Botlarim</a>
+      <a href="#contact" data-i18n="nav_contact">Bog‘lanish</a>
+    </nav>
+    <div class="header-actions">
+      <select id="languageSelect" class="language-select" aria-label="Til">
+        <option value="uz">UZ</option><option value="en">EN</option><option value="ru">RU</option>
+      </select>
+      <button class="icon-btn" id="themeToggle" aria-label="Rang rejimini almashtirish"><i data-lucide="sun-moon"></i></button>
+      <a class="admin-link" href="admin.html"><i data-lucide="lock-keyhole"></i><span>Admin</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse-dot"></span><span data-i18n="hero_status">Dasturlashni o‘rganaman va loyihalar yarataman</span></div>
+        <p class="hero-kicker" data-i18n="hero_greeting">Assalomu alaykum, men</p>
+        <h1>Ogʻabek <span>Oʻralov.</span></h1>
+        <h2 data-i18n="hero_role">Developer & Problem Solver</h2>
+        <p class="hero-description" data-i18n="hero_desc">Men foydali web-saytlar, Telegram botlar va interaktiv loyihalar yaratishga qiziqaman. Bu sahifada mening ishlarim va o‘rganish yo‘lim bilan tanishishingiz mumkin.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#projects" data-i18n="hero_projects">Loyihalarni ko‘rish <i data-lucide="arrow-up-right"></i></a>
+          <a class="btn btn-ghost" href="#contact" data-i18n="hero_contact">Bog‘lanish <i data-lucide="send"></i></a>
+        </div>
+        <div class="social-row">
+          <a href="https://github.com/oralovogabek" target="_blank" rel="noreferrer"><i data-lucide="github"></i> GitHub</a>
+          <a href="https://t.me/" target="_blank" rel="noreferrer"><i data-lucide="send"></i> Telegram</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="code-card">
+          <div class="code-top"><span></span><span></span><span></span><small>developer.js</small></div>
+          <pre><span class="code-purple">const</span> developer = {
+  name: <span class="code-green">"Ogʻabek"</span>,
+  role: <span class="code-green">"Developer"</span>,
+  skills: [
+    <span class="code-green">"HTML"</span>,
+    <span class="code-green">"CSS"</span>,
+    <span class="code-green">"JavaScript"</span>,
+    <span class="code-green">"Python"</span>,
+    <span class="code-green">"Django"</span>
+  ],
+  mindset: <span class="code-green">"Always learning"</span>
+};
+
+<span class="code-purple">export default</span> developer;</pre>
+          <div class="code-footer"><span class="pulse-dot"></span> <span data-i18n="hero_code_status">Yangi g‘oyalar ustida ishlayapman</span></div>
+        </div>
+        <div class="floating-chip chip-top"><i data-lucide="code-2"></i> Clean code</div>
+        <div class="floating-chip chip-bottom"><i data-lucide="rocket"></i> Build & learn</div>
+      </div>
+      <a class="scroll-cue" href="#about"><span></span> SCROLL TO EXPLORE</a>
+    </section>
+
+    <section class="stats-strip section-wrap">
+      <div><strong id="statProjects">26</strong><span data-i18n="stat_projects">Loyihalar</span></div>
+      <div><strong id="statBots">15</strong><span data-i18n="stat_bots">Telegram botlar</span></div>
+      <div><strong>03</strong><span data-i18n="stat_languages">Asosiy yo‘nalish</span></div>
+      <div><strong>∞</strong><span data-i18n="stat_learning">O‘rganish</span></div>
+    </section>
+
+    <section class="section-wrap section-block" id="about">
+      <div class="section-heading"><div><p class="section-label">01 / ABOUT</p><h2 data-i18n="about_title">Men haqimda<span>.</span></h2></div><p data-i18n="about_intro">Qiziqish, izlanish va amaliyot orqali rivojlanaman.</p></div>
+      <div class="about-grid">
+        <article class="about-card about-main"><div class="about-icon"><i data-lucide="user-round"></i></div><h3 data-i18n="about_who">Men kimman?</h3><p data-profile="bio">Men dasturlashga qiziqadigan va doimiy ravishda yangi texnologiyalarni o‘rganadigan developer-man. Amaliy loyihalar orqali tajribamni oshiraman.</p></article>
+        <article class="about-card"><div class="about-icon"><i data-lucide="target"></i></div><h3 data-i18n="about_goal">Maqsadim</h3><p data-i18n="about_goal_text">Mustahkam fundamental bilimga ega bo‘lish va odamlarga foyda beradigan mahsulotlar yaratish.</p></article>
+        <article class="about-card"><div class="about-icon"><i data-lucide="workflow"></i></div><h3 data-i18n="about_approach">Yondashuvim</h3><p data-i18n="about_approach_text">Rejalashtirish, kichik bosqichlarga bo‘lish, kod yozish, sinash va yaxshilash.</p></article>
+      </div>
+      <div class="skills-area"><div class="skills-title"><h3 data-i18n="skills_title">Texnologiyalar</h3><span>MY TOOLKIT</span></div><div class="skill-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Python</span><span>Django</span><span>Git & GitHub</span><span>PostgreSQL</span><span>Supabase</span><span>Aiogram</span></div></div>
+    </section>
+
+    <section class="section-wrap section-block" id="projects">
+      <div class="section-heading"><div><p class="section-label">02 / SELECTED WORK</p><h2 data-i18n="projects_title">Loyihalarim<span>.</span></h2></div><p data-i18n="projects_intro">G‘oyadan ishlaydigan mahsulotgacha.</p></div>
+      <div class="project-toolbar">
+        <div class="filter-list" id="projectFilters">
+          <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Barchasi</button>
+          <button class="filter-btn" data-filter="frontend">Frontend</button>
+          <button class="filter-btn" data-filter="backend">Backend</button>
+          <button class="filter-btn" data-filter="game">Games</button>
+        </div>
+        <label class="search-box"><i data-lucide="search"></i><input id="projectSearch" type="search" placeholder="Loyiha qidirish..." data-i18n-placeholder="search_placeholder"></label>
+      </div>
+      <div class="project-grid" id="projectGrid"><div class="loading-state">Loyihalar yuklanmoqda...</div></div>
+      <p class="empty-state hidden" id="projectEmpty">Bu qidiruv bo‘yicha loyiha topilmadi.</p>
+    </section>
+
+    <section class="section-wrap section-block" id="bots">
+      <div class="section-heading"><div><p class="section-label">03 / TELEGRAM AUTOMATION</p><h2 data-i18n="bots_title">Telegram botlarim<span>.</span></h2></div><p data-i18n="bots_intro">Kundalik vazifalarni yengillashtiruvchi botlar.</p></div>
+      <div class="bot-grid" id="botGrid"><div class="loading-state">Botlar yuklanmoqda...</div></div>
+    </section>
+
+    <section class="section-wrap section-block contact-section" id="contact">
+      <div class="section-heading"><div><p class="section-label">04 / GET IN TOUCH</p><h2 data-i18n="contact_title">Birga nimadir yaratamiz<span>.</span></h2></div><p data-i18n="contact_intro">Savol, taklif yoki hamkorlik g‘oyangiz bormi? Xabar qoldiring.</p></div>
+      <div class="contact-grid">
+        <div class="contact-info"><a href="https://github.com/oralovogabek" target="_blank" rel="noreferrer"><i data-lucide="github"></i><span><small>GITHUB</small>github.com/oralovogabek</span><i data-lucide="arrow-up-right"></i></a><a href="https://t.me/" target="_blank" rel="noreferrer"><i data-lucide="send"></i><span><small>TELEGRAM</small>Telegram profilim</span><i data-lucide="arrow-up-right"></i></a><a href="mailto:hello@example.com"><i data-lucide="mail"></i><span><small>EMAIL</small>hello@example.com</span><i data-lucide="arrow-up-right"></i></a><p class="contact-note" data-i18n="contact_note">Aloqa ma’lumotlarini admin paneldan o‘zgartirishingiz mumkin.</p></div>
+        <form class="contact-form" id="feedbackForm"><div class="form-row"><label><span data-i18n="form_name">Ismingiz</span><input name="name" required maxlength="80" placeholder="Ismingiz"></label><label><span data-i18n="form_email">Email</span><input name="email" type="email" maxlength="150" placeholder="email@example.com"></label></div><label><span data-i18n="form_message">Xabaringiz yoki taklifingiz</span><textarea name="message" rows="5" required maxlength="2000" placeholder="Xabaringizni yozing..."></textarea></label><button class="btn btn-primary" type="submit"><span data-i18n="form_send">Xabar yuborish</span><i data-lucide="arrow-up-right"></i></button><p class="form-status" id="formStatus" aria-live="polite"></p></form>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer section-wrap"><a class="brand" href="#home">OG<span>.</span>DEV</a><p>© <span id="year"></span> Ogʻabek Oʻralov. <span data-i18n="footer_rights">Barcha huquqlar himoyalangan.</span></p><a href="#home" class="back-top">BACK TO TOP ↑</a></footer>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="js/config.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/seed-data.js"></script>
+  <script src="js/data-store.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
